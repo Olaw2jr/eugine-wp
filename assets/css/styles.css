@@ -1060,28 +1060,28 @@ input[type="button"] {
   padding: 30px;
   background: #f5f5f5;
 }
-.blog-page .header.navbar-fixed-top {
+.home .header.navbar-fixed-top {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   background: #fff;
 }
-.blog-page .header h1.logo a {
+.home .header h1.logo a {
   max-width: inherit;
   background: none;
   color: #497cb1;
   padding-left: 0;
   padding-top: 25px;
 }
-.blog-page .header h1.logo a .sub {
+.home .header h1.logo a .sub {
   font-family: "Roboto", arial, sans-serif;
   color: #253340;
   font-weight: 300;
 }
-.blog-page .header .main-nav .nav .nav-item.last {
+.home .header .main-nav .nav .nav-item.last {
   margin-right: 40px;
 }
-.blog-page .header .main-nav .nav .nav-item.last .fa {
+.home .header .main-nav .nav .nav-item.last .fa {
   font-size: 16px;
   margin-right: 5px;
 }
@@ -1722,30 +1722,30 @@ input[type="button"] {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .blog-page .header h1.logo {
+  .home .header h1.logo {
     float: left;
     margin: inherit;
   }
-  .blog-page .header .main-nav .navbar-toggle {
+  .home .header .main-nav .navbar-toggle {
     margin-bottom: 0;
     top: 20px;
   }
-  .blog-page .header .main-nav .navbar-toggle .icon-bar {
+  .home .header .main-nav .navbar-toggle .icon-bar {
     background-color: #384d60;
   }
-  .blog-page .header .main-nav .navbar-toggle:hover .icon-bar {
+  .home .header .main-nav .navbar-toggle:hover .icon-bar {
     background-color: #253340;
   }
-  .blog-page .flexslider {
+  .home .flexslider {
     margin-top: 0;
   }
   .blog-category {
     margin-top: 0;
   }
-  .blog-page .navbar-collapse {
+  .home .navbar-collapse {
     top: 80px;
   }
-  .blog-page .header.navbar-fixed-top .main-nav .nav .nav-item a {
+  .home .header.navbar-fixed-top .main-nav .nav .nav-item a {
     color: #fff;
   }
   .blog-slider .flex-caption .title {
@@ -1800,7 +1800,7 @@ input[type="button"] {
   .main-nav.navbar-right {
     float: none !important;
   }
-  .blog-page .main-nav.navbar-right {
+  .home .main-nav.navbar-right {
     float: right !important;
   }
   .navbar-collapse.collapse {
@@ -1811,7 +1811,7 @@ input[type="button"] {
     margin: 0 auto;
     display: inline-block;
   }
-  .blog-page .header h1.logo {
+  .home .header h1.logo {
     float: left;
     margin: inherit;
   }
@@ -1913,8 +1913,8 @@ input[type="button"] {
   .blog-slider {
     margin-top: 80px;
   }
-  .blog-page .blog-category,
-  .blog-page .blog-archive {
+  .home .blog-category,
+  .home .blog-archive {
     margin-top: 80px;
   }
   .blog-entry-wrapper {

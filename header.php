@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<?php
+/**
+ * The Header for our theme
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package WordPress
+ * @subpackage Eugine
+ * @since Eugine 1.0
+ */
+?><!DOCTYPE html>
+<!--[if IE 8]> <html <?php language_attributes(); ?> class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html <?php language_attributes(); ?> class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->  
 <head>
-    <title>Responsive website template for products</title>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
     <!-- Meta -->
-    <meta charset="utf-8">
+    <meta <?php bloginfo( 'charset' ); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">  
+
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'> 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
@@ -26,15 +40,16 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <?php wp_head(); ?>
 </head> 
 
-<body class="blog-page">
+<body <?php body_class( ); ?>>
     <div class="wrapper">
         <!-- ******HEADER****** --> 
         <header class="header navbar-fixed-top">  
             <div class="container">       
                 <h1 class="logo">
-                    <a href="blog.html">Velocity <span class="sub">Blog</span></a>
+                    <a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?> <span class="sub">Blog</span></a>
                 </h1><!--//logo-->
                 <nav class="main-nav navbar-right" role="navigation">
                     <div class="navbar-header">
@@ -65,7 +80,6 @@
                                     <li><a href="blog-archive.html">June 2014 (4)</a></li>              
                                 </ul>                            
                             </li><!--//dropdown-->
-                            <li class="nav-item nav-item-main-site last"><a href="index.html"><i class="fa fa-home"></i> Back to main site</a></li>
                         </ul><!--//nav-->
                         
                         <div class="searchbox-container">
