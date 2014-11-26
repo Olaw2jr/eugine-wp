@@ -43,7 +43,7 @@
     <?php wp_head(); ?>
 </head> 
 
-<body <?php body_class( ); ?>>
+<body <?php body_class( 'blog-page' ); ?>>
     <div class="wrapper">
         <!-- ******HEADER****** --> 
         <header class="header navbar-fixed-top">  
@@ -83,12 +83,7 @@
                         </ul><!--//nav-->
                         
                         <div class="searchbox-container">
-                            <form class="searchbox">
-                                <label class="sr-only" for="search-form">Search</label>
-                                <input id="search-form" class="form-control searchbox-input" placeholder="Search the blog..." type="search" value="" name="search-form">
-                                <input class="searchbox-submit" type="submit" value="GO">
-                                <i class="fa fa-search searchbox-icon"></i>
-                            </form>
+                            <?php get_search_form(); ?>
                         </div><!--//searchbox-container-->                                                
                         
                     </div><!--//navabr-collapse-->

@@ -58,17 +58,35 @@ get_header(); ?>
         <div id="blog-mansonry" class="blog-list">
         <?php
             if ( have_posts() ) :
-                // Start the Loop.
-                while ( have_posts() ) : the_post();
+            // Start the Loop.
+            while ( have_posts() ) : the_post(); ?>
 
-                    /*
-                     * Include the post format-specific template for the content. If you want to
-                     * use this in a child theme, then include a file called called content-___.php
-                     * (where ___ is the post format) and that will be used instead.
-                     */
-                    get_template_part( 'content', get_post_format() );
+                <article id="post-<?php the_ID(); ?>" <?php post_class('post col-md-4 col-sm-6 col-xs-12'); ?>>
+                    <div class="post-inner">
+                        <figure class="post-thumb">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>                                
+                        </figure><!--//post-thumb-->
+                        <div class="content">
+                            <h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-                endwhile;
+                            <div class="post-entry">
+                                <?php the_excerpt(); ?>
+                                <a class="read-more" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                            <div class="meta">
+                                <ul class="meta-list list-inline">                                       
+                                    <li class="post-time post_date date updated"><?php the_time('F d, Y'); ?></li>
+                                    <li class="post-author"> by <?php the_author_posts_link(); ?> </li>
+                                    <li class="post-comments-link">
+                                        <a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i><?php comments_number('0', '1', '%' ); ?></a>
+                                    </li>
+                                </ul><!--//meta-list-->                             
+                            </div><!--meta-->
+                        </div><!--//content-->
+                    </div><!--//post-inner-->
+                </article><!--//post-->
+
+        <?php endwhile;
                 // Previous/next post navigation.
                 //twentyfourteen_paging_nav();
 
@@ -76,8 +94,7 @@ get_header(); ?>
                 // If no content, include the "No posts found" template.
                 get_template_part( 'content', 'none' );
 
-            endif;
-        ?>
+            endif; ?>
             
         </div><!--//blog-list-->  
     </div><!--//row-->

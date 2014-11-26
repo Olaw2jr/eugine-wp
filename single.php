@@ -10,17 +10,15 @@
 get_header(); ?>
 
 <!-- ******BLOG****** -->         
-        <!--<div class="blog-entry-wrapper"> 
-            
-            <div class="blog-headline-bg">
-            </div><!--//blog-headline-bg-->
             <div class="blog-entry"> 
             <?php
                 // Start the Loop.
                 while ( have_posts() ) : the_post(); ?>
 
                 <article class="post">
-                    <header class="blog-entry-heading">
+                <?php if ( $background = wp_get_attachment_image_src( get_post_thumbnail_id(), 'eugine-full-width' ) ) : ?>
+                    <header class="blog-entry-heading" style="background: #253340 url(<?php echo $background[0]; ?>) no-repeat 50% top;">
+                <?php endif; ?>
                         <div class="container text-center">                        
                             <h1 class="title"><?php the_title(); ?></h1>
                             <div class="meta">
@@ -31,8 +29,8 @@ get_header(); ?>
                             </div><!--meta-->
                         </div><!--//container-->
                         <nav class="post-nav post-nav-top">
-    						<span class="nav-previous"><a href="#" rel="prev"><i class="fa fa-long-arrow-left"></i>Previous post</a></span> 
-    						<span class="nav-next"><a href="#" rel="next">Next post<i class="fa fa-long-arrow-right"></i></a></span>
+    						<span class="nav-previous"><?php previous_post_link('%link', '<i class="fa fa-long-arrow-left"></i>Previous'); ?></span>
+                                    <span class="nav-next"><?php next_post_link('%link', 'Next <i class="fa fa-long-arrow-right">'); ?></i></span>
     				    </nav><!--//post-nav-->
                     </header><!--//blog-entry-heading-->
 
@@ -44,8 +42,8 @@ get_header(); ?>
                             
                             
                             <nav class="post-nav col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
-            						<span class="nav-previous"><a href="#" rel="prev"><i class="fa fa-long-arrow-left"></i>Previous</a></span>
-            						<span class="nav-next"><a href="#" rel="next">Next<i class="fa fa-long-arrow-right"></i></a></span>
+            						<span class="nav-previous"><?php previous_post_link('%link', '<i class="fa fa-long-arrow-left"></i>Previous'); ?></span>
+            						<span class="nav-next"><?php next_post_link('%link', 'Next <i class="fa fa-long-arrow-right">'); ?></i></span>
             				</nav><!--//post-nav-->
             				
             				
