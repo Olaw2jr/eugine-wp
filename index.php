@@ -19,34 +19,18 @@ get_header(); ?>
 <section class="featured-blog-posts section">        
     <div class="flexslider blog-slider">
         <ul class="slides">
+        <?php
+            // Start the Loop.
+            while ( have_posts() ) : the_post(); ?>
             <li class="slide slide-1">
                 <div class="flex-caption container">
-                    <h3 class="title"><a href="#">Ideas are easy, execution is hard</a></h3>
-                    <div class="meta">16th Oct, 2014</div>
-                    <a class="more-link" href="blog-single.html">Read more &rarr;</a>
+                    <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
+                    <div class="meta"><?php the_time('F d, Y'); ?></div>
+                    <a class="more-link" href="<?php the_permalink(); ?>">Read more &rarr;</a>
                 </div><!--//flex-caption-->
             </li>
-            <li class="slide slide-2">
-                <div class="flex-caption container">
-                    <h3 class="title"><a href="#">Done is better than perfect</a></h3>
-                    <div class="meta">23rd Sep, 2014</div>
-                    <a class="more-link" href="blog-single.html">Read more &rarr;</a>
-                </div><!--//flex-caption-->
-            </li>
-            <li class="slide slide-3">
-                <div class="flex-caption container">
-                    <h3 class="title"><a href="#">The value of an idea lies in the using of it</a></h3>
-                    <div class="meta">18th Aug, 2014</div>
-                    <a class="more-link" href="blog-single.html">Read more &rarr;</a>
-                </div><!--//flex-caption-->
-            </li>
-            <li class="slide slide-4">
-                <div class="flex-caption container">
-                    <h3 class="title"><a href="#">Good design is good business</a></h3>
-                    <div class="meta">5th Aug, 2014</div>
-                    <a class="more-link" href="blog-single.html">Read more &rarr;</a>
-                </div><!--//flex-caption-->
-            </li>
+        <?php endwhile; wp_reset_query(); ?>
+
         </ul><!--//slides-->
     </div><!--//flexslider-->
             
@@ -71,7 +55,7 @@ get_header(); ?>
 
                             <div class="post-entry">
                                 <?php the_excerpt(); ?>
-                                <a class="read-more" href="blog-single.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+                                <a class="read-more" href="<?php the_permalink(); ?>">Read more <i class="fa fa-long-arrow-right"></i></a>
                             </div>
                             <div class="meta">
                                 <ul class="meta-list list-inline">                                       
